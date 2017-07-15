@@ -1,18 +1,13 @@
 # Backend
 ## School Name Matching
-
+'''js
 // function 1: get any school name that contains the given school name or is contained within the given school name
-
 // ex. ("Laurier" == "wilfrid laurier university")
-
 function get_name_substr(school_name)
-
 {
-
 var s = []; // array to hold all the matching school names
 
 return s;
-
 }
 
 // function 2: check if the name is an acronym or can be reduced to an acronym ("wilfrid laurier university" == "wlu")
@@ -41,3 +36,4 @@ function get_nearby_beacons(radius, course)
   
   return b;
 }
+'''
