@@ -1,6 +1,6 @@
 # Backend
 ## School Name Matching
-'''js
+```js
 // function 1: get any school name that contains the given school name or is contained within the given school name
 // ex. ("Laurier" == "wilfrid laurier university")
 function get_name_substr(school_name)
@@ -36,4 +36,4 @@ function get_nearby_beacons(radius, course)
   
   return b;
 }
-'''
+```
