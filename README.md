@@ -1,5 +1,6 @@
 # Backend
 ## School Name Matching
+### Due 10:30AM July 24th
 ```js
 // function 1: get any school name that contains the given school name or is contained within the given school name
 // ex. ("Laurier" == "wilfrid laurier university")
