@@ -1,4 +1,4 @@
-var database=firebase.database();                                         //access database
+var database=firebase.database();                                       
 main();
 
 //sample run
