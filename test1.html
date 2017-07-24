@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #invalid1 {
+            color:red;
+            position: absolute;
+            top: 0px;
+            left: 240px;
+        }
+        #invalid2 {
+            color:red;
+            position: absolute;
+            top: 23px;
+            left: 225px;
+        }
+    </style>
+</head>
+
+<body>
+<form name = "input" onsubmit="return validation()">
+    <fieldset>
+        Course_code: <input type = "text" size ="20" maxlength = "10" id = "Course_code" /><br />
+        Start_time: <input type = "text" size = "20" maxlength = "5" id = "Start_time" /><br />
+        <input type = "submit" value = "submit" /><input type = "reset" />
+    </fieldset>
+</form>
+
+<p id="invalid1"></p>
+<p id="invalid2"></p>
+
+<script>
+
+
+    var invalid = 0;
+    var arr;
+    var c;
+    var i;
+
+    function validation()
+    {
+        invalid = 0;
+        i = document.getElementById("Course_code").value;
+
+
+        //Course_code check
+        if(i ==""){
+            document.getElementById("invalid1").innerHTML ="Invalid course code";
+            invalid +=1;
+        }else {
+            document.getElementById("invalid1").innerHTML = "";
+            i = i.toUpperCase();
+            i = i.replace(/\s+/g, "");
+        }
+
+        arr = document.getElementById("Start_time").value.split(":");
+        c = document.getElementById("Start_time").value.indexOf(":");
+
+        //Start_time check
+        if(document.getElementById("Start_time").value == ""){
+            document.getElementById("invalid2").innerHTML = "Invalid start time, please follow the format(##:##)";
+            invalid +=1;
+        }
+        else if(c == -1){
+            document.getElementById("invalid2").innerHTML = "Invalid start time, please be sure to add :";
+            invalid +=1;
+        }
+        else if(arr[0]>24 || arr[1]>59){
+            document.getElementById("invalid2").innerHTML = "Invalid start time";
+            invalid +=1;
+        }
+        else{
+            document.getElementById("invalid2").innerHTML = "";
+        }
+
+        //final check
+        if(invalid != 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
