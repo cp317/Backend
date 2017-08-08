@@ -2,7 +2,6 @@
 var database = firebase.database();
 
 main();
-
 // gets user input to create the beacon
 function main()
 {
